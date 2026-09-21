@@ -1,0 +1,40 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:#fbf4df;font-family:Georgia,"Times New Roman",serif;color:#493719}
+button{font:inherit}
+#app{width:100%;padding:18px}
+.garden{position:relative;max-width:980px;margin:auto;overflow:hidden;border-radius:30px;border:1px solid #ead7a0;background:linear-gradient(180deg,#fffdf4 0%,#fff8dd 58%,#f5e3a9 100%);padding:0 18px 24px;isolation:isolate}
+.sky{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.glow{position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,220,92,.23);filter:blur(12px);top:45px;left:50%;transform:translateX(-50%);z-index:-1}
+.sun{position:absolute;width:115px;height:115px;border-radius:50%;background:radial-gradient(circle,#fff7bf 0%,#f4d36c 55%,rgba(244,211,108,.08) 72%);top:35px;right:9%;opacity:.72}
+.title{position:relative;z-index:3;max-width:680px;margin-top:-10px}
+.eyebrow{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#9b7724}
+h1{font-size:clamp(38px,8vw,72px);line-height:1.03;margin:14px 0 10px;color:#916414;text-shadow:0 2px 0 rgba(255,255,255,.8)}
+.subtitle{font-size:clamp(16px,2.5vw,20px);line-height:1.65;color:#6f5a37;margin:0 auto;max-width:610px}
+.verse{margin:22px auto 0;max-width:570px;background:rgba(255,253,241,.8);border:1px solid rgba(211,175,76,.35);border-radius:18px;padding:15px 18px;font-style:italic;line-height:1.65;box-shadow:0 8px 25px rgba(125,91,24,.07)}
+.garden-bed{position:absolute;bottom:-24px;left:-3%;width:106%;height:155px;background:linear-gradient(180deg,#e5c66b 0%,#cda94c 100%);border-radius:50% 50% 0 0/45% 45% 0 0;z-index:0;opacity:.58}
+.flowers{position:absolute;bottom:58px;left:0;width:100%;height:170px;z-index:2;pointer-events:none}
+.flower{position:absolute;bottom:0;transform-origin:bottom center;animation:sway 4.5s ease-in-out infinite}
+.stem{width:4px;height:75px;background:#6d8a39;margin:auto;border-radius:3px}
+.head{font-size:clamp(25px,5vw,44px);line-height:1;filter:drop-shadow(0 4px 3px rgba(110,79,12,.12))}
+.leaf{position:absolute;width:25px;height:11px;background:#789642;border-radius:100% 0 100% 0;bottom:24px;left:-17px;transform:rotate(-22deg)}
+.leaf.r{left:0;transform:scaleX(-1) rotate(-22deg)}
+.p1{left:2%;transform:scale(.75)}.p2{left:10%;transform:scale(1.05)}.p3{left:20%;transform:scale(.65)}.p4{left:30%;transform:scale(.92)}.p5{left:42%;transform:scale(1.12)}.p6{left:55%;transform:scale(.7)}.p7{left:66%;transform:scale(1)}.p8{left:77%;transform:scale(.68)}.p9{left:88%;transform:scale(1.08)}.p10{left:95%;transform:scale(.72)}
+.p2,.p5,.p9{animation-delay:-1.2s}.p3,.p7{animation-delay:-2.4s}
+.actions{position:relative;z-index:4;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:-4px}
+button{min-height:46px;border:0;border-radius:999px;padding:12px 20px;font-weight:700;cursor:pointer;background:#b98216;color:white;box-shadow:0 5px 14px rgba(130,91,12,.16);transition:transform .2s,background .2s}
+button.secondary{background:#fffdf5;color:#835d12;border:1px solid #dec581;box-shadow:none}
+button:hover{transform:translateY(-2px)}
+button:focus-visible{outline:3px solid #8c681e;outline-offset:3px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:18px;position:relative;z-index:5}
+.card{background:rgba(255,253,247,.94);border:1px solid #ead8a5;border-radius:22px;padding:20px;line-height:1.72;box-shadow:0 7px 22px rgba(111,78,16,.06)}
+.card h2{font-size:21px;color:#936714;margin:0 0 9px}.card p{margin:8px 0}
+.letter{display:none;position:relative;z-index:5;margin-top:15px;background:#fff8df;border-radius:16px;padding:18px;border:1px dashed #d5b65e;white-space:pre-line;line-height:1.8}
+.letter.show{display:block;animation:fade .5s ease}
+.petals{position:absolute;inset:0;z-index:6;pointer-events:none;overflow:hidden}.petal{position:absolute;top:-25px;font-size:19px;animation:fall linear forwards}
+.footer{text-align:center;color:#80672e;padding:17px 8px 3px;font-size:14px}
+@keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes fall{to{transform:translateY(470px) rotate(320deg);opacity:0}}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:600px){#app{padding:8px}.garden{padding-left:10px;padding-right:10px;border-radius:22px}.sky{min-height:455px}.sun{right:-35px}.flowers{height:145px}.cards{grid-template-columns:1fr}.garden-bed{height:125px}.head{font-size:28px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
